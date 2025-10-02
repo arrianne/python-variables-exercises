@@ -1,5 +1,14 @@
 # Q3: Write a program that takes a distance in kilometers from the user, and output the distance in meters and centimeters.
 
+def input_float(prompt):
+    """Prompts the user until a valid float is entered."""
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Invalid input! Please enter a valid number (e.g., 5, 42.5, -3).")
+
+
 def distance_converter(km):
     """Converts kilometers to meters and centimeters."""
     meters = km * 1000
@@ -7,7 +16,7 @@ def distance_converter(km):
     return meters, centimeters
 
 # Get input from the user
-km = float(input("Enter distance in kilometers: "))
+km = input_float("Enter distance in kilometers: ")
 
 # Call the function
 meters, centimeters = distance_converter(km)
